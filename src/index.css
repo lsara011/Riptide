@@ -39,8 +39,11 @@ a {
   color: rgb(255, 255, 255);
   font-size: 20px;
   font-family: Mouldy;
+  transition: 100ms ease-in-out;
 }
-
+a:hover{
+  color:rgb(61, 153, 234);
+}
 a:after {
   content: "";
   position: absolute;
@@ -48,7 +51,7 @@ a:after {
   right: 100%;
   bottom: -0.2em; /* Adjust this value for the distance of the line from the text */
   height: 2px; /* Adjust the thickness of the line */
-  background-color: #000000; /* The color of the underline */
+  background-color: rgb(61, 153, 234); /* The color of the underline */
   border-radius: 1em;
   transition: right 0.4s cubic-bezier(0,.5,0,1);
 }
