@@ -1,0 +1,58 @@
+@font-face {
+  font-family: Mouldy;
+  src: url(assets/fonts/mouldy-cheese-font/MouldyCheeseRegular-WyMWG.ttf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav{
+  background-color: rgb(26, 26, 198);  
+  padding:20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo h1{
+  font-family:Mouldy;
+  font-size: 30px;
+  color:  white;
+}
+
+header ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 35px;
+}
+
+ul li{
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-family: Mouldy;
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -0.2em; /* Adjust this value for the distance of the line from the text */
+  height: 2px; /* Adjust the thickness of the line */
+  background-color: #000000; /* The color of the underline */
+  border-radius: 1em;
+  transition: right 0.4s cubic-bezier(0,.5,0,1);
+}
+
+a:hover:after {
+  right: 0;
+}
