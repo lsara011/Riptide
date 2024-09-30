@@ -1,0 +1,325 @@
+@font-face {
+  font-family: Mouldy;
+  src: url(assets/fonts/mouldy-cheese-font/MouldyCheeseRegular-WyMWG.ttf);
+}
+
+@font-face {
+  font-family: Fredoka;
+  src: url(assets/fonts/Fredoka-Regular.ttf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url(assets/Images/camille-minouflet-d7M5Xramf8g-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width:100%;
+  height:100%;
+}
+
+.ham-button{
+  height:100vh;
+  position:absolute;
+  color: black;
+}
+
+nav{
+  padding:20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+}
+.logo h1{
+  font-family:Mouldy;
+  font-size: 30px;
+  color:  black;
+}
+
+.fas{
+  display: none;
+  font-size: 30px;
+}
+
+header ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 35px;
+}
+
+
+ul li{
+  list-style: none;
+  color:black;  
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  color: black;
+  font-size: 20px;
+  font-family: Mouldy;
+  transition: 100ms ease-in-out;
+}
+a:hover{
+  color:rgb(39, 39, 39);
+}
+a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -0.2em; /* Adjust this value for the distance of the line from the text */
+  height: 2px; /* Adjust the thickness of the line */
+  background-color: rgb(39, 39, 39); /* The color of the underline */
+  border-radius: 1em;
+  transition: right 0.4s cubic-bezier(0,.5,0,1);
+}
+
+a:hover:after {
+  right: 0;
+}
+
+.mainSection{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+}
+
+.search-bar-button button{
+  cursor: pointer;
+  padding: 20px;
+  width: 150px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 10px black;
+}
+select {
+  appearance: none; /* Removes default styling */
+  -webkit-appearance: none; /* Removes iOS-specific styling */
+  -moz-appearance: none; /* Removes Firefox-specific styling */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.weather-info{
+  font-family: Fredoka;
+  font-size: 1.5em;
+}
+
+.weather-info > *{
+  padding: 20px;
+  border:2px solid black;
+  background-color: white;
+  border-radius: 15px;
+  margin: 30px;
+  width: 500px;
+}
+
+.container{
+  padding: 25px;
+  max-width: 35%;
+  max-height: 55%;
+  border-radius: 10px;
+}
+
+#cities-option{
+  box-shadow: 1px 4px 10px black;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+
+/* Default state: links are hidden */
+.links {
+  display: none;
+}
+
+/* When the menu is opened, display the links */
+.links.show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+/* When the menu is closed, hide the links */
+.links.hide {
+  display: none; /* Hide the links and remove them from layout */
+}
+
+/* Blur in animation */
+@keyframes blurIn {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* Blur out animation only for small screens */
+@keyframes blurOut {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(-20px);
+  }
+}
+
+/* Apply the blur in animation to each link */
+.links.show li {
+  opacity: 0;
+  animation: blurIn 0.5s ease forwards;
+}
+
+/* Staggered animation for each link when showing */
+.links.show li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.links.show li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.links.show li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.links.show li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .links > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding:  0;
+    margin: 0;
+  }
+
+  .links.show {
+    flex-direction: column;
+    width: 100%;
+    display: flex; 
+    gap: 0;
+
+  }
+
+  .links.hide {
+    display: none; 
+  }
+
+
+  .links.hide li {
+    opacity: 1;
+    animation: blurOut 0.5s ease forwards;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .title-bars {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .fas {
+    display: block;
+    cursor: pointer;
+    transition: 175ms ease-in-out;
+  }
+
+  .fas:hover {
+    color: white;
+  }
+
+  .fas:active {
+    color: rgb(62, 62, 62);
+  }
+}
+
+@media only screen and (max-width: 425px)
+{
+
+  section{
+    margin: 0;
+    padding: 0;
+  }
+  .search-bar-button{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-bar-button button{
+      width: 300px;    
+  }
+
+  .weather-info > *{
+    max-width: 300px;
+    margin:0;
+    margin-top: 20px;
+    font-size: 0.5em;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .links {
+    display: flex !important; 
+    flex-direction: row;
+    justify-content: space-around;
+    opacity: 1; 
+    filter: blur(0); 
+    transform: none; 
+    animation: none;
+  }
+
+  .links > li {
+    width: auto; 
+  }
+}
