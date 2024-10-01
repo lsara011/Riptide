@@ -6,13 +6,17 @@ import { BehindTheProject } from './BehindTheProject'
 import { ToolsUsed } from './ToolsUsed'
 import 'devicon/devicon.min.css';
 
+
+
 function App() {
+  
   const [selectedSection,setSelectionSection] = useState('section');
   const handleNavClick = (section) =>{
     setSelectionSection(section)
   }
   return (
     <>
+      
       <Header handleNavClick={handleNavClick}/>
       {selectedSection === 'section' && <Section />}
       {selectedSection === 'behindTheProject' && <BehindTheProject />}
@@ -20,5 +24,5 @@ function App() {
     </>
   )
 }
-
+alert(window.innerWidth)
 export default App
