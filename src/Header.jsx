@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 
-export function Header() {
+export function Header({ handleNavClick }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Function to toggle the menu open/close
@@ -35,13 +34,20 @@ export function Header() {
         
         {/* Toggle the class based on isMenuOpen state */}
         <ul className={`links ${isMenuOpen ? 'show' : 'hide'}`}>
-          <li><a href="#">Main Screen</a></li>
-          <li><a href="#">Behind The Project</a></li>
-          <li><a href="https://luisfsaravia.com" target="_blank" rel="noopener noreferrer">About The Dev</a></li>
-          <li><a href="#">Tools Used</a></li>
+          <li>
+            <a href="#" onClick={() => handleNavClick('section')}>Main Screen</a>
+          </li>
+          <li>
+            <a href="#" onClick={() => handleNavClick('behindTheProject')}>Behind The Project</a>
+          </li>
+          <li>
+            <a href="https://luisfsaravia.com" target="_blank" rel="noopener noreferrer">About The Dev</a>
+          </li>
+          <li>
+            <a href="#" onClick={() => handleNavClick('toolsUsed')}>Tools Used</a>
+          </li>
         </ul>
       </nav>
     </header>
   );
 }
-

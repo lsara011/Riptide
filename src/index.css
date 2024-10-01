@@ -14,6 +14,14 @@
   box-sizing: border-box;
 }
 
+.mainSection{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: Fredoka;
+  background-color: rgba(0,0,0,0.8);
+}
+
 body{
   background-image: url(assets/Images/camille-minouflet-d7M5Xramf8g-unsplash.jpg);
   background-size: cover;
@@ -36,17 +44,19 @@ nav{
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  z-index: 1000;
   position: absolute;
 }
 .logo h1{
   font-family:Mouldy;
   font-size: 30px;
-  color:  black;
+  color:  white;
 }
 
 .fas{
   display: none;
   font-size: 30px;
+  color: white;
 }
 
 header ul{
@@ -65,8 +75,8 @@ ul li{
 a {
   text-decoration: none;
   position: relative;
-  color: black;
-  font-size: 20px;
+  color: white;
+  font-size: 25px;
   font-family: Mouldy;
   transition: 100ms ease-in-out;
 }
@@ -133,11 +143,15 @@ select {
 
 .weather-info > *{
   padding: 20px;
-  border:2px solid black;
-  background-color: white;
+  color: white;
+  font-family: Fredoka;
   border-radius: 15px;
   margin: 30px;
   width: 500px;
+}
+
+.tide-info h4{
+  font-size: 30px;
 }
 
 .container{
@@ -154,6 +168,21 @@ select {
   border-radius: 10px;
 }
 
+.section-title{
+  text-align: center;
+  width: 60%;
+  transition: 75ms ease-in-out;
+}
+
+
+.safety-info p{
+  font-size: 1.3em;
+}
+.data-display{
+  font-family: Fredoka;
+  font-size: 20px;
+  margin: 25px;
+}
 
 /* Default state: links are hidden */
 .links {
@@ -230,20 +259,21 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 25px;
+    border-radius: 10px;
     width: 100%;
     height: 50px;
     text-align: center;
-    padding:  0;
+    padding: 0;
     margin: 0;
+    background-color: black;
   }
 
   .links.show {
     flex-direction: column;
+    margin-right: 20px;
     width: 100%;
     display: flex; 
     gap: 0;
-
   }
 
   .links.hide {
@@ -271,6 +301,7 @@ select {
 
   .fas {
     display: block;
+    color: white;
     cursor: pointer;
     transition: 175ms ease-in-out;
   }
@@ -306,6 +337,10 @@ select {
     margin-top: 20px;
     font-size: 0.5em;
   }
+
+  .tide-info p{
+    font-size: 18px;
+  }
 }
 
 @media only screen and (min-width: 769px) {
@@ -322,4 +357,65 @@ select {
   .links > li {
     width: auto; 
   }
+}
+
+
+
+
+/* Behind the Project */
+
+.btp-section{
+  display: flex;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btp-section h1{
+  color: white;
+  font-family: Fredoka;
+}
+
+.btp-paragraph p{
+  color: white;
+  margin: 10px;
+  width: 300px;
+}
+
+/* Tools Used for Project */
+.toolsSection{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.toolsSection h1{
+  color: white;
+  text-align: center;
+  font-family: Fredoka;
+}
+.devTools{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.devTools > i{
+  font-size: 100px;
+  padding:  20px;
+  color:  white;
+}
+
+.api-used{
+  text-align: center;
+  color: white;
+  font-family: Fredoka;
+  margin: 40px;
 }
