@@ -24,5 +24,4 @@ function App() {
     </>
   )
 }
-alert(window.innerWidth)
 export default App
